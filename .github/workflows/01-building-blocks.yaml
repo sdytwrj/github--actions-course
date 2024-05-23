@@ -5,16 +5,14 @@ on:
   workflow_dispatch:
   
 jobs:
-  job1:
-    name: echo-hello
+  echo-hello:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Say hello
         run: echo "Hello, World!"
 
-  job2:
-    name: echo-goodbye
+  echo-goodbye:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
