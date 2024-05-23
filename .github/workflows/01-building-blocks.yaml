@@ -6,26 +6,24 @@ on:
   
 jobs:
   job1:
-    build:
-      name: echo-hello
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: Say hello
-          run: echo "Hello, World!"
+    name: echo-hello
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Say hello
+        run: echo "Hello, World!"
 
   job2:
-    build: 
-      name: echo-goodbye
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: Failed step
-          run: |
-            echo "I will fail"
-            exit 0
-  
-        - name: Say goodbye
-          run: echo "Goodbye!"
+    name: echo-goodbye
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Failed step
+        run: |
+          echo "I will fail"
+          exit 1
+
+      - name: Say goodbye
+        run: echo "Goodbye!"
       
  
