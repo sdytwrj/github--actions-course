@@ -12,7 +12,7 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - name: Say hello
-        - run: echo "Hello, World!"
+          run: echo "Hello, World!"
 
   job2:
     build: 
@@ -21,11 +21,11 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - name: Failed step
-        - run: |
+          run: |
             echo "I will fail"
             exit 1
   
         - name: Say goodbye
-        - run: echo "Goodbye!"
+          run: echo "Goodbye!"
       
  
