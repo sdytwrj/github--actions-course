@@ -10,6 +10,7 @@ jobs:
       name: echo-hello
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v3
         - name: Say hello
         - run: echo "Hello, World!"
 
@@ -18,6 +19,7 @@ jobs:
       name: echo-goodbye
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v3
         - name: Failed step
         - run: |
             echo "I will fail"
