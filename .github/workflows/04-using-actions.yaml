@@ -1,20 +1,19 @@
 name: 04 - Using Actions
 on: push
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
 
-      #- name: Printing Folders
-        #run: tree
+    #- name: Printing Folders
+      #run: tree
 
-      - name: Setup Node
-      - uses: actions/setup-node@v4
-        with: 
-          node-version: '20.x'
+    - name: Setup Node
+    - uses: actions/setup-node@v4
+      with: 
+        node-version: '20.x'
 
-      - name: Install Dependencies
-        run: npm ci
+    - name: Install Dependencies
+      run: npm ci
         working-directory: 04-using-actions/react-app
