@@ -8,5 +8,5 @@ on:
 jobs:
   echo:
     steps:
-    - run: Running whenever a PR is opened or synchronized AND base branch is main
+    - run: echo Running whenever a PR is opened or synchronized AND base branch is main
     
