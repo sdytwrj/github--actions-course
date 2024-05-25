@@ -1,7 +1,7 @@
 name: 04 - Using Actions
 on: push
 jobs:
-  name: build
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
