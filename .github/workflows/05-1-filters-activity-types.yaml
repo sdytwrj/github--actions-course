@@ -7,6 +7,7 @@ on:
       - synchronize
 jobs:
   echo:
+    runs-on: ubuntu-latest
     steps:
     - run: Running whenever a PR is opened or synchronized AND base branch is main
     
