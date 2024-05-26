@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: debug Print start-up data
         #if: ${{ inputs.debug == 'true' }}
-        if: ${{ inputs.debug || true }}
+        if: ${{ inputs.debug || false }}
         run: |
           echo "Triggered by: ${{ github.event_name }}"
           echo "Branch: ${{github.ref}}"
@@ -21,7 +21,7 @@ jobs:
 
       - name: debug Print when triggered from main
         #if: ${{ inputs.debug == 'true' && github.ref_name == 'main' }}
-        if: ${{ inputs.debug && github.ref == 'refs/heads/main' || true }}
+        if: ${{ inputs.debug && github.ref == 'refs/heads/main' || false }}
         run: echo "I was triggered from main"
 
       - name: Greeting
