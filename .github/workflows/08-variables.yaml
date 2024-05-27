@@ -1,10 +1,11 @@
 name: 08 - Using Variables
 on: 
-  push:
+  #push:
   workflow_dispatch:
 env:
   WORKFLOW_VAR: I am a workflow env var
   OVERWRITTEN: I will be overwritten
+  UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR || 'default value' }}
 jobs:
  echo:
    runs-on: ubuntu-latest
