@@ -45,7 +45,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
         
-    outputs: deps-cache-key ${{env.CACHE-KEY}}
+    outputs: 
+      deps-cache-key:
+        ${{ steps.cache-key.outputs.CACHE_KEY }}
 
 linting:
     runs-on: ubuntu-latest
