@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/actions/composite-cache-deps
         with:
           node-version: 14
-          working-dir: ${{ env.working-directory }}
+          working-directory: ${{ env.working-directory }}
           #cache: 'npm'
       - name: Test
         run: npm run test
