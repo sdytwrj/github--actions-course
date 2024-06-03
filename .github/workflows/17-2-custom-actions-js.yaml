@@ -1,7 +1,23 @@
 name: 17 - 2 - Custom Actions - JS
-run-name: 17 - 2 - Custom Actions - JS
+run-name: 17 - 2 - Custom Actions - JS | ${{ inputs.base-branch }}-${{ inputs.target-branch }}-${{ inputs.working-dir }}
+
 on: 
   workflow_dispatch:
+    inputs:
+      base-branch:
+        description: The branch used as the base for the dependency update checks
+        default: main
+        required: false
+      target-branch:
+        description: description of The branch from which the PR is created
+        default: default of update-dependencies
+        required: false
+      working-directory:
+        description: The working directory of the project to check for dependency updates
+        required: true
+      debug:
+        description: Whether the output debug messages to the console
+        required: false
 jobs:
   dependency-update:
     runs-on: ubuntu-latest
