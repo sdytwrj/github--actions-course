@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node and NPM Dependencies
         uses: ./.github/actions/composite-cache-deps
         with:
-          node-version: 14
+          node-version: 20
           working-dir: ${{ env.working-directory }}
           #cache: 'npm'
       - name: Test
