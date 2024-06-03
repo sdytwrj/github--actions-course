@@ -3,7 +3,7 @@ run-name: 17 - 2 - Custom Actions - JS | ${{ inputs.base-branch }}-${{ inputs.ta
 
 on: 
   workflow_dispatch:
-    inputs:
+    #inputs:
       #base-branch:
         #description: The branch used as the base for the dependency update checks
         #default: main
@@ -28,5 +28,4 @@ jobs:
       with: 
         base-branch: main
         target-branch: update-dependencies
-        working-directory: true
         debug: false
