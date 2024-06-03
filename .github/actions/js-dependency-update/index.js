@@ -1,10 +1,3 @@
-#const core = require('@actions/core');
- 
-#async function run() { 
-  #core.info('I am a custom JS action');
-#}
- 
-#run()
 const core = require('@actions/core');
 const exec = require('@actions/exec');
 
