@@ -18,6 +18,10 @@ on:
       #debug:
         #description: Whether the output debug messages to the console
         #required: false
+
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   dependency-update:
     runs-on: ubuntu-latest
@@ -30,3 +34,6 @@ jobs:
         target-branch: update-dependencies
         working-directory: 17-custom-actions/react-app
         debug: false
+        gh-token: ${{ secrets.GITHUB_TOKEN }}
+
+  
