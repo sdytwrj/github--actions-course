@@ -28,4 +28,5 @@ jobs:
       with: 
         base-branch: main
         target-branch: update-dependencies
+        working-dir: ./.github/actions/js-dependency-update
         debug: false
