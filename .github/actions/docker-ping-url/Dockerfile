@@ -7,7 +7,8 @@ COPY . .
 # Validate ENV VARs
 #RUN echo "URL=$URL" 
 
-# Set build args as env vars
+# Set build args as env vars and execute main.py
+RUN chmod +x /app/entrypoint.sh 
 ENTRYPOINT ["/app/entrypoint.sh"]
 
-CMD ["python", "/app/main.py"]
+#CMD ["python", "/app/main.py"]
