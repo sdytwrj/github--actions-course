@@ -3,13 +3,13 @@ FROM python:alpine3.19
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-COPY entrypoint.sh entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 # Validate ENV VARs
 #RUN echo "URL=$URL" 
 
 # Set build args as env vars and execute main.py
-RUN chmod +x entrypoint.sh 
-ENTRYPOINT ["entrypoint.sh"]
+RUN chmod +x /entrypoint.sh 
+ENTRYPOINT ["/entrypoint.sh"]
 
 #CMD ["python", "/app/main.py"]
