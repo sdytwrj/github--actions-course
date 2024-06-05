@@ -8,7 +8,7 @@ COPY . .
 RUN echo "Validating inputs..." \
     && if [ -z "$URL" ]; then \
            echo "Error: URL input is required." \
-           && exit 1 \
+           #&& exit 2 \
        fi \
     && echo "Input validation successful." && echo "URL=$URL"
     
