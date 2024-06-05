@@ -8,6 +8,9 @@ COPY entrypoint.sh /entrypoint.sh
 # Convert line endings to Unix style
 RUN dos2unix /entrypoint.sh
 
+# Verify working directory
+RUN pwd
+
 # Validate ENV VARs
 #RUN echo "URL=$URL" 
 
