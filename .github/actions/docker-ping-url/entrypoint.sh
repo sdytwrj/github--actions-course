@@ -6,4 +6,4 @@ export MAX_TRIALS=$2
 export DELAY=$3
 
 # Run your Python script
-python /app/main.py
+python main.py
