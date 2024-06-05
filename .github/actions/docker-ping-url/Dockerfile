@@ -10,6 +10,6 @@ RUN echo "Validating inputs..." \
            echo "Error: URL input is required." \
            && exit 1 \
        fi \
-    && echo "Input validation successful."
+    && echo "Input validation successful." && echo "URL=$URL"
     
 CMD ["python", "/app/main.py"]
