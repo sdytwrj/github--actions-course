@@ -10,6 +10,8 @@ COPY entrypoint.sh /entrypoint.sh
 
 # Set build args as env vars and execute main.py
 RUN chmod +x /entrypoint.sh 
+# Add a RUN directive to print directory contents
+RUN ls -la /
 ENTRYPOINT ["/entrypoint.sh"]
 
 #CMD ["python", "/app/main.py"]
