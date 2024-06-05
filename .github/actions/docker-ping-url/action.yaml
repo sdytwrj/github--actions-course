@@ -16,7 +16,7 @@ inputs:
 runs:
   using: docker
   image: Dockerfile
-  env:
-    URL: ${{ inputs.url }}
-    MAX_TRIALS: ${{ inputs.max_trials }}
-    DELAY: ${{ inputs.delay }}
+  args:
+    - ${{ inputs.url }}
+    - ${{ inputs.max_trials }}
+    - ${{ inputs.delay }}
