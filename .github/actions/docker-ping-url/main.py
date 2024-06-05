@@ -17,8 +17,16 @@ def ping_url(url, delay, max_trials):
 
 def run():
     url = os.getenv('INPUT_URL')
-    delay = int(os.getenv('INPUT_DELAY', 5))  # Default delay of 5 seconds if not specified
-    max_trials = int(os.getenv('INPUT_MAX_TRIALS', 3))  # Default max trials of 3 if not specified
+    delay_str = os.getenv('INPUT_DELAY', '5')
+    max_trials_str = os.getenv('INPUT_MAX_TRIALS', '3')
+    
+    if not delay_str:
+        delay_str = '5'
+    if not max_trials_str:
+        max_trials_str = '3'
+
+    delay = int(delay_str)
+    max_trials = int(max_trials_str)
 
     if not url:
         raise ValueError("URL input is required.")
@@ -29,6 +37,7 @@ def run():
     
 if __name__ == "__main__":
     run()
+
 
 
 #if __name__ == "__main__":
