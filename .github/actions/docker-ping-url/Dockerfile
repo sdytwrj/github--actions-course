@@ -6,7 +6,7 @@ COPY . .
 COPY entrypoint.sh /entrypoint.sh
 
 # Convert line endings to Unix style
-RUN dos2unix entrypoint.sh
+RUN dos2unix /entrypoint.sh
 
 # Validate ENV VARs
 #RUN echo "URL=$URL" 
