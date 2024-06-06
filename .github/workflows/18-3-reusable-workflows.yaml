@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
-    - uses: ./.github/workflows/18-1-reusable-workflow.yaml
-      with:
-        target-directory: any-value
+    uses: ./.github/workflows/18-1-reusable-workflow.yaml
+    with:
+      target-directory: any-value
   e2e-tests:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
     needs: deploy
-    uses: <owner>/<repository>/.github/workflows/e2e.yaml@<branch, tag, or sha commit>
+    uses: sdytwrj/github-actions-course-example-e2e/.github/workflows/e2e.yaml@main
     secrets:
       access-token: ${{ secrets.GH_TOKEN }}
