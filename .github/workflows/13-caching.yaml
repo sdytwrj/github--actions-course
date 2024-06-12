@@ -54,28 +54,28 @@ jobs:
     defaults:
       run: 
         working-directory: 13-caching/react-app
-        steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-  
-        - name: Setup Node
-          uses: actions/setup-node@v4
-          with: 
-            node-version: ${{ inputs.node-version }}
-  
-        - name: Download cached dependencies
-          id: cache
-          if:  ${{ inputs.use-cache == true }}
-          uses: actions/cache@v3
-          with: 
-            path: 13-caching/react-app/node_modules
-            key: ${{needs.install-deps.outputs.deps-cache-key}}
-          
-        - name: Testing
-          run: npm run test
-  
-        - name: Linting
-          run: echo Linting...
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with: 
+          node-version: ${{ inputs.node-version }}
+
+      - name: Download cached dependencies
+        id: cache
+        if:  ${{ inputs.use-cache == true }}
+        uses: actions/cache@v3
+        with: 
+          path: 13-caching/react-app/node_modules
+          key: ${{needs.install-deps.outputs.deps-cache-key}}
+        
+      - name: Testing
+        run: npm run test
+
+      - name: Linting
+        run: echo Linting...
    
   build:
     runs-on: ubuntu-latest
