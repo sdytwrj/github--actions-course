@@ -65,11 +65,11 @@ jobs:
 
       - name: Download cached dependencies
         id: cache
-        if:  ${{ inputs.use-cache == true }}
         uses: actions/cache@v3
+        if: ${{ inputs.use-cache }} #${{ inputs.use-cache == true }}
         with: 
           path: 13-caching/react-app/node_modules
-          key: ${{needs.install-deps.outputs.deps-cache-key}}
+          key: ${{ needs.install-deps.outputs.deps-cache-key }}
         
       - name: Testing
         run: npm run test
