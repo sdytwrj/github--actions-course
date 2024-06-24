@@ -30,5 +30,13 @@ jobs:
           echo "PR is not a feature"
           exit 1
           fi
-        
+  js-safer-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check PR title
+        uses: ./.github/actions/safe-title-check
+        with:
+          pr-title: ${{ github.event.pull-request.title }}
+       
     
